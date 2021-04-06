@@ -8,15 +8,23 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Chatroom</title>
+    
   </head>
   <body>
+    <center>
+    <div id="test1212">Welcome</div>
+    <div id="us_name"></div>
 
-    <center><textarea id="chat-text" cols="80" rows="20" ></textarea><br>
+    <textarea id="chat-text" cols="80" rows="20" ></textarea><br>
     <input id="input" type="text" size="60">
     <input id="submit" type="button" value="Send">
-  </center>
+    </center>
 
+    <script>
+      var uname = prompt("Enter your username:", "Username");
+      document.getElementById("us_name").innerHTML = uname
+    </script>
   
 
 
@@ -25,13 +33,15 @@
     <script>
       const user_username = JSON.parse(document.getElementById('user_username').textContent);
       const roomName = JSON.parse(document.getElementById('room-name').textContent);
+      document.getElementById("test1212").innerHTML = "You have joined "+roomName+ " Successfully!" 
 
 
       document.querySelector('#submit').onclick = function (e){
         const messageInputDom = document.querySelector('#input');
         const message = messageInputDom.value;
+         
         chatSocket.send(JSON.stringify({
-          'message':message,
+          'message':uname+": "+message,
           'username': user_username,
         }));
         messageInputDom.value = '';
@@ -62,5 +72,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
+
   </body>
 </html>
