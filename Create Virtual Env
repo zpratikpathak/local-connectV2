@@ -1,5 +1,5 @@
 Open the folder which u have downloaded in VS_code and execute the following command
 
-python -m venv venv
+
 venv/Scripts/Activate
-pip install django, channels
+pip install django , channels
