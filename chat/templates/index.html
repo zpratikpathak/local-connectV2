@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,23 +7,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
   <link rel="icon"  href="E:/Megahack 2021/to push repo/local-web-chat/chat/templates/assests/logo5.svg" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
+
+
+  <link rel="icon" href= "{%static '/chat/assests/logo5.svg'%}" />
+  <link rel="stylesheet" href="{% static '/chat/style.css'%}" />
+
   <script src="https://kit.fontawesome.com/e8ab1b814c.js" crossorigin="anonymous"></script>
   <title>  Join create page </title>
   </style>
 </head>
-<script>
-  document.querySelector('join-button').onclick = function (){
-      const loc = document.getElementById('inputfield').value;
-      var url="localhost:8000/chat/"+loc;
-      location.replace(url);
-    };
-</script>
+
 <body>
   <!-- nav section -->
   <nav>
-    <img src="assests/logo5.svg" style="width: 5%;"><a href="#" ><h1>LOCALBYTES</h1></a>
+    <img src="{% static '/chat/assests/logo5.svg'%}" style="width: 4%;"><a href="#" ><h1>LOCALBYTES</h1></a>
     <!-- <h1>LocalBytes</h1> -->
     <ul class="nav-list">
     
@@ -32,12 +34,15 @@
   <!-- image and buttons section -->
   <section class="first-section">
     <div class="container">
-      <img style="height: 300px; width: 500px;" src="assests/Group_chat_re_frmo.svg" alt="main-logo" />
+      <img style="height: 300px; width: 500px;" src="{% static '/chat/assests/Group_chat_re_frmo.svg' %}" alt="main-logo" />
          
       <div class="container__h1-p">
-        <h1>Local Web Chat App integrated with Raspberry pi🔗📲</h1>
+        <h1>LocalConnect integrated <br> with Raspberry pi🔗📲</h1>
         <br>
-        <textarea name="" id="inputfield" cols="30" rows="10"></textarea>
+
+        <textarea name="" id="inputfield" cols="30" rows="10" style="resize:none; width: 250px; height: 200px;" placeholder="type something here..."></textarea> &nbsp;
+        <textarea name="" id="" cols="30" rows="3" style="resize:none; width: 250px; height: 200px;" placeholder="type something here..."></textarea>
+
         <br>
         <br>
         <a href="#" class="btn-1" id="join-button" style="color:black;">Join</a> &nbsp;&nbsp;
@@ -52,6 +57,13 @@
     &copy; Team LocalBytes | Megahack 2.0 
   </footer>
   <br>
+  <script>
+    document.querySelector('join-button').onclick = function (){
+        const loc = document.getElementById('inputfield').value;
+        var url="localhost:8000/chat/"+loc;
+        location.replace(url);
+      };
+  </script>
 </body>
 </html>
 
