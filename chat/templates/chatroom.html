@@ -4,28 +4,118 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>LocalBytes</title>
+    <style>
+      textarea{
+        resize: none;
+        margin-top: 1.7cm;
+        margin-right: 0cm;
+        background-color:whitesmoke;
+        border-radius: 0.3cm;
+        border-top-left-radius: 0cm;
+        border-top-right-radius: 0cm;
+        /* border-bottom-left-radius: 0.1cm;
+        border-bottom-right-radius: 0.1cm;  */
+ 
+        position: relative;
+        vertical-align: bottom;
+
+        /* width: 270px;
+        height: 480px; */
+       
+
+      }
+      #chat-text1{
+        border-top-left-radius: 0.5cm;
+        border-top-right-radius: 0.5cm;
+        border-bottom-left-radius: 0cm;
+        border-bottom-right-radius: 0cm;
+        background-color:black;
+        color: white;
+        vertical-align: top;
+        margin-left: 0cm;
+        position: fixed;
+        
+
+      }
+      input{
+        margin-left: 0cm;
+        border-radius: 0.2cm;
+        margin-top: 0.3cm;
+        margin-right: 0.2cm;
+        vertical-align: bottom;
+      }
+
+      body{
+        margin-top: 0.5cm;
+        background-color: white;
+        background-image: url("IMAGES\\bgg.jpg");
+        /* background: #005abb;      */
+      }
+
+      #test1212,#us_name{
+        font-family:cursive;
+        font-size: 0.5cm;
+      }
+
+      nav {
+        display: flex;
+        padding: 1.5em 2em;
+        position: fixed;
+      }
     
+      
+      nav ul {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        font-size: 0.8125rem;
+  
+      }
+
+      h1{
+        margin-top: 0cm;
+        margin-left: 0.6cm;
+      }
+
+      
+    </style>
   </head>
   <body>
+    <nav>
+      
+        <a href="#"><h4>LOCALBYTES</h></a> 
+      <ul class="nav-list">
+      </ul>
+    </nav>
     <center>
     <div id="test1212">Welcome</div>
     <div id="us_name"></div>
-
-    <textarea id="chat-text" cols="80" rows="20" ></textarea><br>
-    <input id="input" type="text" size="60" value="Type here">
-    <input id="submit" type="button" value="Send">
+   
+      <!-- <h1>Web - Chat</h1> -->
+    
+     <!-- <textarea disabled id="chat-text1" cols="70" rows="2" ></textarea>  -->
+     
+     <input type="text" style="font-size: 18pt; height: 58px; width: 526.8px" id="chat-text1" size="58" placeholder="  WEB CHAT"> 
+     <textarea disabled id="chat-text" cols="72" rows="18" ></textarea><br>
+    
+    <input id="input" type="text" size="58" placeholder="Type here" autofocus>
+    <i style="font-size:24px" class="fa" id="submit" type="button">&#xf1d9;</i> 
     </center>
 
-    <script>
-      var uname = prompt("Enter your username:", "Username");
-      document.getElementById("us_name").innerHTML = "Welcome "+uname+"!";
-    </script>
+    
+      <script>
+        var uname = prompt("Enter your username:", "Username");
+        document.getElementById("us_name").innerHTML = "Welcome "+uname+"!";
   
+      </script>
+    
 
 
     {{ room_name|json_script:"room-name" }}
@@ -53,7 +143,7 @@
         const chatSocket = new WebSocket(
             'ws://' +
             window.location.host +
-            '/ws/chat/' +
+            '/ws/chat/' + 
             roomName +
             '/'
 
@@ -62,10 +152,15 @@
         chatSocket.onmessage = function(e){
             const data = JSON.parse(e.data);
             console.log(data)
-            document.querySelector('#chat-text').value += (data.username + ':' + data.message + '\n')
+            document.querySelector('#chat-text').value += (data.username + data.message + '\n')
         }
 
     </script>
+
+    <script>
+      document.getElementById("chat-text1").setAttribute("placeholder"," " + roomName);
+    </script>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
