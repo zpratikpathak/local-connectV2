@@ -35,10 +35,10 @@ python3 manage.py runserver 0.0.0.0:80
 ```
 
 # Preview
-##Homepage:
+### Homepage:
 ![Homepage](https://user-images.githubusercontent.com/49340667/115995142-acd3d100-a5f7-11eb-9114-c588516d09af.png)
 
-##Chatroom:
+### Chatroom:
 ![Chatroom](https://user-images.githubusercontent.com/49340667/115995198-f0c6d600-a5f7-11eb-92e2-0be0d8cddc0c.png)
 
 # Built with
