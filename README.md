@@ -1,5 +1,5 @@
 ﻿# Local Connect
- Local Connect is a project which connects people during internet downtime or any crisis.
+ Local Connect is a project which connects people during internet downtime or any crisis. It creates a local web server and all the people who are connected to our network can access this web application. After that they can either create a chatroom or join a chatroom. Connect with friends and have fun.
  
 # Requirements
 - Python3
