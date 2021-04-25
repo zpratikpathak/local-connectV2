@@ -48,3 +48,4 @@ Python3, Django, Channels, HTML, CSS, JS
 - [Vidya Rautela](https://github.com/Vidyart29 "Vidya Rautela")
 - [Simran Batada](https://github.com/sbatada1 "Simran Batada")
 - [Shruti Lade](https://github.com/Shruti9801 "Shruti Lade")
+- [Pratik Pathak](https://github.com/zpratikpathak "Pratik Pathak")
