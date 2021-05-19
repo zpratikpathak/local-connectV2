@@ -45,6 +45,7 @@ python3 manage.py runserver 0.0.0.0:80
 Python3, Django, Channels, HTML, CSS, JS
 
 # Contributors
+Kudos to the team 👏👏
 - [Vidya Rautela](https://github.com/Vidyart29 "Vidya Rautela")
 - [Simran Batada](https://github.com/sbatada1 "Simran Batada")
 - [Shruti Lade](https://github.com/Shruti9801 "Shruti Lade")
