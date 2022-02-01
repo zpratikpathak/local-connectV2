@@ -39,14 +39,11 @@
       <div class="container__h1-p">
         <h1>LocalConnect integrated <br> with Raspberry pi🔗📲</h1>
         <br>
-
-        <textarea name="" id="inputfield" cols="30" rows="10" style="resize:none; width: 250px; height: 200px;" placeholder="type something here..."></textarea> &nbsp;
-        <textarea name="" id="" cols="30" rows="3" style="resize:none; width: 250px; height: 200px;" placeholder="type something here..."></textarea>
-
+        <input type="text" name="roomlinkinfo" id="roomlink321" placeholder="type here.." rows="2"> &nbsp;
         <br>
         <br>
-        <a href="#" class="btn-1" id="join-button" style="color:black;">Join</a> &nbsp;&nbsp;
-        <a href="#" class="btn-1" id="create-button" style="color: black;">Create</a>
+        <a href="#" id="joinbutton32" class="btn-1" style="color:black;" >Join</a> &nbsp;&nbsp;
+        <a href="#" id="createbutton32" class="btn-1" style="color: black;" >Create</a>
       </div>
     </div>
   </section>
@@ -57,13 +54,28 @@
     &copy; Team LocalBytes | Megahack 2.0 
   </footer>
   <br>
+  
   <script>
-    document.querySelector('join-button').onclick = function (){
-        const loc = document.getElementById('inputfield').value;
-        var url="localhost:8000/chat/"+loc;
-        location.replace(url);
+    document.getElementById("joinbutton32").onclick = function() {
+
+      //function room_link (){
+      //alert(document.getElementById('roomlink321'))
+        const loc = document.getElementById('roomlink321').value;
+        // var url="localhost:8000/chat/"+loc;
+        // alert(url)
+        location.replace(loc);
       };
-  </script>
+
+      document.getElementById("createbutton32").onclick = function() {
+
+        //function room_link (){
+        //alert(document.getElementById('roomlink321'))
+          const loc = document.getElementById('roomlink321').value;
+          // var url="localhost:8000/chat/"+loc;
+          // alert(url)
+          location.replace(loc);
+        };
+</script>
 </body>
 </html>
 
